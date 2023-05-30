@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Gerenciamento de Validade</title>
+</head>
+
+<body>
+    <header class="header">
+        
+        <h1 class="title">Gerenciador de Validade</h1>
+        <button class="add-button" onclick="showForm()">Adicionar</button>
+
+    </header>
+
+    <div class="form-container" id="formContainer">
+        <div class="form-content">
+            <h2>Adicionar Produto</h2>
+            <form onsubmit="event.preventDefault(); adicionarProduto()">
+                <div class="form-group">
+                    <label for="codigo">Código:</label>
+                    <input type="text" id="codigo" required>
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição:</label>
+                    <input type="text" id="descricao" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" id="quantidade" required>
+                </div>
+                <div class="form-group">
+                    <label for="validade">Validade:</label>
+                    <input type="date" id="validade" required>
+                </div>
+                <div class="form-group">
+                    <label for="localidade">Localidade:</label>
+                    <input type="text" id="localidade" required>
+                </div>
+                <div class="form-actions">
+                    <button class="submit-button" type="submit">Adicionar</button>
+                    <button class="cancel-button" onclick="hideForm()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descrição</th>
+                    <th>Quantidade</th>
+                    <th>Validade</th>
+                    <th>Local</th>
+                    <th>Dias</th>
+                    <th>Status</th>
+                    <th class="actions-header">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="productTableBody"></tbody>
+        </table>
+    </div>
+    <footer>
+        <p>Desenvolvido por Kened Sousa</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
